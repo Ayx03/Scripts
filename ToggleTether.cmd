@@ -22,7 +22,6 @@ if %errorlevel% neq 0 (
     pause > nul
     color 07
     Rem Reset color
-    exit /b 1
 )
 echo.
 echo Connecting to device via Wi-Fi...
@@ -34,7 +33,7 @@ adb connect Your-Device-Name
 if %errorlevel% neq 0 (
     echo.
     pause > nul
-    exit /b 2
+    exit /b 1
 )
 Rem If your router doesn't support using the hostname, set up a static local IP address for your device either in router panel or the device settings.
 echo.
@@ -59,7 +58,7 @@ if %errorlevel% neq 0 (
     pause > nul
     color 07
     Rem reset color
-    exit /b 3
+    exit /b 2
 )
 echo.
 echo Toggling Tether...
@@ -83,5 +82,5 @@ if %errorlevel% neq 0 (
     pause > nul
     color 07
     Rem reset color
-    exit /b 4
+    exit /b 3
 )
