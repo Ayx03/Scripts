@@ -6,7 +6,7 @@ echo This script needs to be edited before use. (replace Your-Device-Name with y
 Rem It recommended that you remove the line above after you done the edit.
 Rem You can also remove the "-s" parameter if you're sure there'll be no more than one device connected to your computer at a time.
 echo.
-echo Enabling Wi-Fi on device...
+echo Enabling Wi-Fi on the device...
 Rem These two operations are for compatibility of wireless debugging (so the setting can be toggled weather the phone is connected via USB cable or not), if you don't need to toggle tether wirelessly you can remove this part.
 echo.
 adb -s Your-Device-Name shell svc wifi enable
@@ -14,7 +14,7 @@ if %errorlevel% neq 0 (
     title [ImAyx.Pro] Awaiting Response...
     color 6
     echo.
-    echo Failed to enable Wi-Fi on device. 
+    echo Failed to enable Wi-Fi on the device. 
     echo.
     echo This operation is for compatibility of wireless debugging so the tether setting can be toggled weather the phone is connected via USB cable or not, if you don't need to toggle tether wirelessly you can edit the script remove this part.
     echo.
