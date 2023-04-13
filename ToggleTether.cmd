@@ -3,11 +3,11 @@ Rem This script toggles tether on Android device via Android Debug Bridge, make 
 Rem This script needs to be edited before use. (replace Your-Device-Name with your Android device name or IP)
 title [ImAyx.Pro] Toggling Tether...
 echo This script needs to be edited before use. (replace Your-Device-Name with your Android device name or IP)
-Rem It recommended that you remove the line above after you done the edit.
+Rem It's recommended that you remove the line above after you have done the edit.
 Rem You can also remove the "-s" parameter if you're sure there'll be no more than one device connected to your computer at a time.
 echo.
 echo Enabling Wi-Fi on the device...
-Rem These two operations are for compatibility of wireless debugging (so the setting can be toggled weather the phone is connected via USB cable or not), if you don't need to toggle tether wirelessly you can remove this part.
+Rem These two operations are for compatibility of wireless debugging (so the setting can be toggled whether the phone is connected via USB cable or not), if you don't need to toggle tether wirelessly you can remove this part.
 echo.
 adb -s Your-Device-Name shell svc wifi enable
 if %errorlevel% neq 0 (
@@ -16,7 +16,7 @@ if %errorlevel% neq 0 (
     echo.
     echo Failed to enable Wi-Fi on the device. 
     echo.
-    echo This operation is for compatibility of wireless debugging so the tether setting can be toggled weather the phone is connected via USB cable or not, if you don't need to toggle tether wirelessly you can edit the script remove this part.
+    echo This operation is for compatibility of wireless debugging so the tethering setting can be toggled whether the phone is connected via USB cable or not, if you don't need to toggle tether wirelessly you can edit the script to remove this part.
     echo.
     echo Press any key to continue executing.
     pause > nul
@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
     Rem Reset color
 )
 echo.
-echo Connecting to device via Wi-Fi...
+echo Connecting to the device via Wi-Fi...
 Rem If your device runs Android 11+, I suggest that you run this command when it's connected via USB:
 Rem adb tcpip 5555
 Rem This will make the wireless debugging port always the default 5555, not an always changing annoying random port.
@@ -35,7 +35,7 @@ if %errorlevel% neq 0 (
     pause > nul
     exit /b 1
 )
-Rem If your router doesn't support using the hostname, set up a static local IP address for your device either in router panel or the device settings.
+Rem If your router doesn't support using the hostname, set up a static local IP address for your device either in your router panel or the device settings.
 echo.
 echo Opening up Tether Settings...
 echo.
