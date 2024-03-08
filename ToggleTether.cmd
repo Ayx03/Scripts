@@ -1,7 +1,7 @@
 @echo off
 Rem This script toggles tether on Android device via Android Debug Bridge, make sure USB debugging is on and platform-tools is installed on your computer before running.
 Rem This script needs to be edited before use. (replace Your-Device-Name with your Android device name or IP)
-title [ImAyx.Pro] Toggling Tether...
+title [ImAyx.top] Toggling Tether...
 echo This script needs to be edited before use. (replace Your-Device-Name with your Android device name or IP)
 Rem It's recommended that you remove the line above after you have done the edit.
 Rem You can also remove the "-s" parameter if you're sure there'll be no more than one device connected to your computer at a time.
@@ -11,7 +11,7 @@ Rem These two operations are for compatibility of wireless debugging (so the set
 echo.
 adb -s Your-Device-Name shell svc wifi enable
 if %errorlevel% neq 0 (
-    title [ImAyx.Pro] Awaiting Response...
+    title [ImAyx.top] Awaiting Response...
     color 6
     echo.
     echo Failed to enable Wi-Fi on the device. 
@@ -41,7 +41,7 @@ echo Opening up Tether Settings...
 echo.
 adb -s Your-Device-Name shell am start -n com.android.settings/.TetherSettings
 if %errorlevel% neq 0 (
-    title [ImAyx.Pro] Toggle Failed!
+    title [ImAyx.top] Toggle Failed!
     color cf
     echo.
     echo Failed to open Tether Settings.
@@ -65,7 +65,7 @@ echo Toggling Tether...
 echo.
 adb -s Your-Device-Name shell input keyevent 66
 if %errorlevel% neq 0 (
-    title [ImAyx.Pro] Toggle Failed!
+    title [ImAyx.top] Toggle Failed!
     color cf
     echo.
     echo Failed to Toggle Tether.
