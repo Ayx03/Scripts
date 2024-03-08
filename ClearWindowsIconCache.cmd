@@ -1,7 +1,10 @@
 rem 执行后你可能需要把固定在任务栏上的图标取消固定，关闭程序再打开后才会看到效果，重建图标缓存需要一些时间，耐心等待
+rem You may need to unpin icons from the taskbar, close the program and reopen it to make it show properly. Rebuilding icon cache will take some time, wait patiently.
 rem 强制杀死 Windows 资源管理器
+rem Force Kill Windows Explorer
 taskkill /f /im explorer.exe
 rem 清理系统图标缓存数据库
+rem Clear system icon cache database
 attrib -h -s -r "%userprofile%\AppData\Local\IconCache.db"
 del /f "%userprofile%\AppData\Local\IconCache.db"
 attrib /s /d -h -s -r "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\*"
@@ -16,4 +19,5 @@ rem 清理 系统托盘记忆的图标
 echo y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams
 echo y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream
 rem 启动 Windows 资源管理器
+rem start Windows explorer
 start explorer
